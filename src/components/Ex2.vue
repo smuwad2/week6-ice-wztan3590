@@ -12,6 +12,7 @@
 
 <template>
 
-    <!-- add code here -->
+    <img v-bind:src="myImg" v-bind:width="width" v-bind:height="height" />
+    <!-- or <img v-bind:src="myImg" :width="width" :height="height" /> -->
    
 </template>
