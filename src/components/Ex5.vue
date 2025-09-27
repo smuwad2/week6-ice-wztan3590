@@ -17,7 +17,19 @@ export default {
     
     methods: {
         cycleTheme() {
-            currentThemeIndex = randomInt(2)
+            this.currentThemeIndex = randomInt(3);
+            const theme = this.themes[this.currentThemeIndex];
+            if (theme === 'dark') {
+                this.bgColor = '#333';
+                this.textColor = '#fff';
+            } else if (theme === 'light') {
+                this.bgColor = '#fff';
+                this.textColor = '#000';
+            } else if (theme === 'neon') {
+                this.bgColor = '#39ff14';
+                this.textColor = '#000';
+            }
+            return this.themes[this.currentThemeIndex]
         }
     }
 }
@@ -52,7 +64,7 @@ export default {
         <div class="preview-section">
             <h2>Live Preview</h2>
             <!-- Add code here to set background color and text color -->
-            <div class="preview-card" v-bind:class="{'blueBox' : blueBoth, 'redBox' : !blueBoth}>
+            <div class="preview-card" :style="{'background-color': bgColor, 'color': textColor}"">
                 <img :src="imageUrl" class="preview-img">
                 <h3>{{ name || 'Your Name' }}</h3>
                 <h4>{{ job || 'Job Title' }}</h4>
