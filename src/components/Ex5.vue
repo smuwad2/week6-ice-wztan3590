@@ -17,7 +17,7 @@ export default {
     
     methods: {
         cycleTheme() {
-            this.currentThemeIndex = randomInt(3);
+            this.currentThemeIndex = randomInt(0, 3);
             const theme = this.themes[this.currentThemeIndex];
             if (theme === 'dark') {
                 this.bgColor = '#333';
