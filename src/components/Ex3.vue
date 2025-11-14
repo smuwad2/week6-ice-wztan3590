@@ -19,7 +19,6 @@
     </select>
     
     <div>
-
         <div v-if="loginType === 'username'">
             <label>Username</label>
             <input placeholder="Enter your username">
